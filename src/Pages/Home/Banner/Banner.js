@@ -1,9 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import banner1 from '../../../Images/Banner/banner-1.png'
-import banner2 from '../../../Images/Banner/banner-2.png'
-import banner3 from '../../../Images/Banner/banner-3.png'
 
 const Banner = () => {
     return (
@@ -18,13 +15,13 @@ const Banner = () => {
             infiniteLoop={true}
         >
             <div>
-                <img class="w-full h-full rounded-lg" src={banner1} alt="bannerimage" />
+                <img class="w-full h-full rounded-lg" src="https://i.ibb.co/v1Vsmsk/banner-1.png" alt="bannerimage" />
             </div>
             <div>
-                <img class="w-full h-full rounded-lg" src={banner2} alt="bannerimage" />
+                <img class="w-full h-full rounded-lg" src="https://i.ibb.co/N7pRdCm/banner-2.png" alt="bannerimage" />
             </div>
             <div>
-                <img class="w-full h-full rounded-lg" src={banner3} alt="bannerimage" />
+                <img class="w-full h-full rounded-lg" src="https://i.ibb.co/k3xJyK4/banner-3.png" alt="bannerimage" />
             </div>
         </Carousel>
     );

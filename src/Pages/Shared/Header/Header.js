@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from '../../../Images/header-logo.png'
 
 const Header = () => {
     return (
         <div className='mx-10 flex justify-between'>
             <div className='h-32'>
-                <img className='w-full h-full' src={logo} alt="" />
+                <img className='w-full h-full' src="https://i.ibb.co/mSrC2Xp/header-logo.png" alt="" />
             </div>
             <div className='my-auto rounded-lg'>
                 {
