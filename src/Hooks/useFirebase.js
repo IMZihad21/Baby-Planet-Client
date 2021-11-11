@@ -1,5 +1,6 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
 import { useEffect, useState } from "react";
+import { toast } from 'react-toastify';
 import initFirebase from "../Utilities/FirebaseInit/FirebaseInit";
 
 initFirebase();
@@ -13,6 +14,9 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider)
+            .catch(err => {
+                toast.error(err.message)
+            })
             .finally(() => { setLoading(false) });
     }
 

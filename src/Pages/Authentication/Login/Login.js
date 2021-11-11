@@ -1,10 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 const Login = ({ newUser, setNewUser }) => {
     const { register, handleSubmit } = useForm();
+    const onSubmit = (formData) => {
+        const { email, password } = formData;
+        if (email === "" || password === "") {
+            toast.error("Error (Fill all the fields before sign in)");
+            return;
+        }
+    }
     return (
-        <form className="mt-5" onSubmit={handleSubmit(onsubmit)}>
+        <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
             <div className="text-left">
                 <label htmlFor="email" className="text-lg font-medium text-pink-700 block mb-2">Email Address</label>
                 <input {...register("email")} type="email" id="email" className="bg-pink-50 border border-pink-700 sm:text-sm rounded-lg w-full p-2.5 mb-2" required="" />
