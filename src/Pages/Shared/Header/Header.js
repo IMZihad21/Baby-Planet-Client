@@ -30,7 +30,7 @@ const Header = () => {
                             <Link to='/authentication'>
                                 <div className="flex">
                                     <div className="w-16 md:w-12 p-1 m-auto">
-                                        <img className="w-full rounded-full" src={user.photoURL} alt={user.displayName} />
+                                        <img className="w-full rounded-full" src={user.photoURL ? user.photoURL : "https://i.ibb.co/cwYT56L/pngegg.png"} alt={user.displayName} />
                                     </div>
                                     <h1 className="text-xl font-semibold w-28 my-auto px-1 md:px-2 md:py-2">{user.displayName}</h1>
                                 </div>
