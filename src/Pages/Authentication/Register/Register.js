@@ -1,15 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import useProvider from '../../../Hooks/useProvider';
 
-const Register = ({ newUser, setNewUser }) => {
+const Register = ({ redirect }) => {
     const { register, handleSubmit } = useForm();
+    const { emailPassRegister } = useProvider();
     const onSubmit = (formData) => {
         const { displayName, email, password, rePassword } = formData;
         if (displayName === "" || email === "" || password === "" || rePassword === "") {
             toast.error("Error (Fill all the fields before sign in)");
             return;
         }
+        emailPassRegister(displayName, email, password, redirect);
     }
     return (
         <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>

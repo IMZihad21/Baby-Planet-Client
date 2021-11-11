@@ -1,4 +1,13 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import {
+    getAuth,
+    signInWithPopup,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    GoogleAuthProvider,
+    onAuthStateChanged,
+    updateProfile,
+    signOut
+} from "firebase/auth";
 import { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 import initFirebase from "../Utilities/FirebaseInit/FirebaseInit";
@@ -10,14 +19,34 @@ const useFirebase = () => {
     const [ loading, setLoading ] = useState(true)
     const auth = getAuth();
 
+    // Register with email pass
+    const emailPassRegister = (displayName, email, password, { redirectURI, history }) => {
+        setLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(() => {
+                updateProfile(auth.currentUser, { displayName });
+                history.replace(redirectURI);
+            })
+            .catch(err => toast.error(err.message))
+            .finally(() => setLoading(false));
+    }
+
+    // Login with Email Pass
+    const emailPassLogin = (email, password, { redirectURI, history }) => {
+        setLoading(true);
+        signInWithEmailAndPassword(auth, email, password)
+            .then(() => history.replace(redirectURI))
+            .catch(err => toast.error(err.message))
+            .finally(() => setLoading(false));
+    }
+
     // Google Login
     const googleProvider = new GoogleAuthProvider();
-    const googleLogin = () => {
-        return signInWithPopup(auth, googleProvider)
-            .catch(err => {
-                toast.error(err.message)
-            })
-            .finally(() => { setLoading(false) });
+    const googleLogin = ({ redirectURI, history }) => {
+        signInWithPopup(auth, googleProvider)
+            .then(() => history.replace(redirectURI))
+            .catch(err => toast.error(err.message))
+            .finally(() => setLoading(false));
     }
 
     // Log Out
@@ -47,6 +76,8 @@ const useFirebase = () => {
     return {
         user,
         loading,
+        emailPassRegister,
+        emailPassLogin,
         googleLogin,
         logOut
     }

@@ -26,17 +26,17 @@ const Header = () => {
             <div className='my-auto rounded-lg flex'>
                 {
                     user.uid ?
-                        (<div className="flex space-x-4 bg-pink-100 rounded-xl">
+                        (<div className="flex space-x-4 bg-pink-100 rounded-lg">
                             <Link to='/authentication'>
                                 <div className="flex">
                                     <div className="w-16 md:w-12 p-1 m-auto">
                                         <img className="w-full rounded-full" src={user.photoURL ? user.photoURL : "https://i.ibb.co/cwYT56L/pngegg.png"} alt={user.displayName} />
                                     </div>
-                                    <h1 className="text-xl font-semibold w-28 my-auto px-1 md:px-2 md:py-2">{user.displayName}</h1>
+                                    {user.displayName && <h1 className="text-xl font-semibold w-28 my-auto px-1 md:px-2 md:py-2">{user.displayName}</h1>}
                                 </div>
                             </Link>
                             <Link to='/dashboard'>
-                                <button className="w-20 md:w-auto py-4 md:px-10 py-2 md:py-3 my-auto text-white font-bold bg-pink-700 hover:bg-pink-600 rounded-xl">
+                                <button className="w-20 md:w-auto py-4 md:px-10 py-2 md:py-3 my-auto text-white font-bold bg-pink-700 hover:bg-pink-600 rounded-lg">
                                     Dashboard
                                 </button>
                             </Link>
