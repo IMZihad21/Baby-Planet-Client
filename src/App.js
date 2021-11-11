@@ -11,6 +11,7 @@ import Footer from './Pages/Shared/Footer/Footer';
 import NavBar from './Pages/Shared/NavBar/NavBar';
 import Products from './Pages/Products/Products/Products';
 import Authentication from './Pages/Authentication/Authentication/Authentication';
+import ProductPurchase from './Pages/Products/ProductPurchase/ProductPurchase';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/products">
             <Products />
+          </Route>
+          <Route path="/purchase/:productID">
+            <ProductPurchase />
           </Route>
         </Switch>
         <Footer />
