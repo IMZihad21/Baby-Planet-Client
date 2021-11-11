@@ -6,7 +6,7 @@ const Banner = () => {
     return (
         <div className='mt-5'>
             <div>
-                <h1 className='text-3xl text-left font-semibold text-right my-10'>Make <span className='text-pink-700 font-bold'>Memories ...</span></h1>
+                <h1 className='text-3xl text-left font-semibold text-right my-10'>Cherish precious <span className='text-pink-700 font-bold'>Moments ...</span></h1>
             </div>
             <Carousel
                 className='mt-5'
