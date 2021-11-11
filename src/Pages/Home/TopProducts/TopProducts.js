@@ -7,13 +7,15 @@ const TopProducts = () => {
     useEffect(() => {
         axios.get('http://localhost:9000/products')
             .then((response) => {
-                setProducts(response.data);
+                const data = response.data;
+                const slicedData = data.slice(0, 6);
+                setProducts(slicedData);
             });
     }, [])
     return (
         <div className='mt-5'>
             <div>
-                <h1 className='text-3xl text-left font-semibold'>Top <span className='text-pink-700 font-bold'>Sales</span></h1>
+                <h1 className='text-3xl text-left font-semibold my-10'>Top <span className='text-pink-700 font-bold'>Sales ...</span></h1>
             </div>
             <div className='mt-2 bg-pink-100 rounded-lg p-5 grid grid-cols-4 gap-3'>
                 {
