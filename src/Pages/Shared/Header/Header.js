@@ -8,9 +8,11 @@ const Header = () => {
                 <img className='w-full h-full' src={logo} alt="" />
             </div>
             <div className='my-auto rounded-lg'>
-                <input className='border px-20 py-3 rounded-l-lg' type="text" />
-                <button className='bg-pink-700 hover:bg-pink-500 px-10 py-3 rounded-r-lg'><i className="text-white fas fa-search"></i></button>
-                <button className='bg-pink-700 hover:bg-pink-500 px-10 py-3 rounded-lg ml-2'><i className="text-white fas fa-shopping-cart"></i></button>
+                {
+                    <button className='text-white bg-pink-700 hover:bg-pink-600 px-5 py-3 rounded-lg'><i class="fas fa-sign-in-alt"></i> Sign In</button>
+                }
+                <button className='text-white bg-pink-700 hover:bg-pink-600 px-5 py-3 rounded-lg ml-2'><i className="fas fa-search"></i> Search</button>
+                <button className='text-white bg-pink-700 hover:bg-pink-600 px-5 py-3 rounded-lg ml-2'><i className="fas fa-shopping-cart"></i> Cart</button>
             </div>
         </div>
     );
