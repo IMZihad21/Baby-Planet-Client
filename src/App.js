@@ -8,6 +8,7 @@ import {
 import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
+import NotFound from './Pages/Shared/NotFound/NotFound'
 import Products from './Pages/Products/Products/Products';
 import Authentication from './Pages/Authentication/Authentication/Authentication';
 import ProductPurchase from './Pages/Products/ProductPurchase/ProductPurchase';
@@ -38,6 +39,9 @@ function App() {
           <PrivateRoute path="/purchase/:productID">
             <ProductPurchase />
           </PrivateRoute>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
         <Footer />
       </Router>

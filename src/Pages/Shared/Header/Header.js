@@ -38,11 +38,11 @@ const Header = () => {
                     user.uid ?
                         (<div className="flex bg-pink-100 rounded-lg">
                             <NavLink to='/dashboard'>
-                                <button className="w-20 md:w-auto py-4 px-5 py-2 md:py-3  text-white font-bold bg-pink-700 hover:bg-pink-600 ml-1">
+                                <button className="w-20 md:w-auto px-5 py-3  text-white font-bold bg-pink-700 hover:bg-pink-600 ml-1">
                                     <i class="fas fa-columns"></i> Dashboard
                                 </button>
                             </NavLink>
-                            <button onClick={logOut} className="w-20 md:w-auto py-4 px-5 py-2 md:py-3  text-white font-bold bg-pink-700 hover:bg-pink-600 ml-1 rounded-r-lg">
+                            <button onClick={logOut} className="w-20 md:w-auto px-5 py-3  text-white font-bold bg-pink-700 hover:bg-pink-600 ml-1 rounded-r-lg">
                                 <i class="fas fa-sign-out-alt"></i> Sign Out
                             </button>
                             <NavLink to='/authentication'>
