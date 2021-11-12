@@ -4,7 +4,7 @@ const Offers = () => {
     return (
         <div className='mt-5'>
             <div>
-                <h1 className='text-3xl text-left font-semibold my-10'>Hot <span className='text-pink-700 font-bold'>Offers ...</span></h1>
+                <h1 className='text-3xl font-semibold pb-10 my-10'>Limited <span className='text-pink-700 font-bold'>Offers</span></h1>
             </div>
             <div className='grid md:grid-cols-3 gap-5'>
                 <div className='bg-pink-100 rounded-lg p-4'>

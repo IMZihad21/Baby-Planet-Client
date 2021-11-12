@@ -8,7 +8,6 @@ import {
 import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
-import NavBar from './Pages/Shared/NavBar/NavBar';
 import Products from './Pages/Products/Products/Products';
 import Authentication from './Pages/Authentication/Authentication/Authentication';
 import ProductPurchase from './Pages/Products/ProductPurchase/ProductPurchase';
@@ -20,7 +19,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <NavBar />
         <Switch>
           <Route exact path="/">
             <Redirect to='/home' />

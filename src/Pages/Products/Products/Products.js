@@ -12,9 +12,9 @@ const Products = () => {
             });
     }, [])
     return (
-        <div className='mt-5'>
+        <div className='mt-5 mx-10'>
             <div>
-                <h1 className='text-3xl text-center font-semibold my-10'>Explore All Products</h1>
+                <h1 className='text-3xl font-semibold my-10'>Explore All  <span className='text-pink-700 font-bold'>Products </span></h1>
             </div>
             <div className='mt-2 rounded-lg p-5 grid grid-cols-4 gap-3'>
                 {

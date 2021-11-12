@@ -15,7 +15,7 @@ const Reviews = () => {
     return (
         <div className='mt-5'>
             <div>
-                <h1 className='text-3xl text-left font-semibold text-right my-10'>Latest Customer <span className='text-pink-700 font-bold'>Reviews ...</span></h1>
+                <h1 className='text-3xl font-semibold my-10'>Latest Customer <span className='text-pink-700 font-bold'>Reviews</span></h1>
             </div>
             <div className='grid grid-cols-3'>
                 {

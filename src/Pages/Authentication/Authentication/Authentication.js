@@ -14,8 +14,8 @@ const Authentication = () => {
     const redirect = { redirectURI, history }
 
     return (
-        <div className='flex'>
-            <div className="md:w-1/2 px-10">
+        <div className='flex mx-10'>
+            <div className="md:w-1/2">
                 {
                     user.uid ?
                         <UserProfile /> :
