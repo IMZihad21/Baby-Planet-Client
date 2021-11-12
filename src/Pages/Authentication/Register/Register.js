@@ -9,7 +9,7 @@ const Register = ({ redirect }) => {
     const onSubmit = (formData) => {
         const { displayName, email, password, rePassword } = formData;
         if (displayName === "" || email === "" || password === "" || rePassword === "") {
-            toast.error("Error (Fill all the fields before sign in)");
+            toast.error("Error :: Fill all the fields before sign in");
             return;
         }
         emailPassRegister(displayName, email, password, redirect);

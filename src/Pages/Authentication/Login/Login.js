@@ -9,7 +9,7 @@ const Login = ({ redirect }) => {
     const onSubmit = (formData) => {
         const { email, password } = formData;
         if (email === "" || password === "") {
-            toast.error("Error (Fill all the fields before sign in)");
+            toast.error("Error :: Fill all the fields before sign in");
             return;
         }
         emailPassLogin(email, password, redirect);

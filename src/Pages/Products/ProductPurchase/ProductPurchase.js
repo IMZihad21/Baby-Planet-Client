@@ -16,7 +16,7 @@ const ProductPurchase = () => {
         const { name, email, address, quantity } = formData;
         const totalCost = Math.round(((product.productPrice * quantity) + Number.EPSILON) * 100) / 100;
         if (name === '' || email === '' || address === '') {
-            toast.error("Error (Fill all the fields to continue purchase)");
+            toast.error("Error :: Fill all the fields to continue purchase");
             return;
         }
 
@@ -32,6 +32,8 @@ const ProductPurchase = () => {
             .then((response) => {
                 if (response.data.acknowledged) {
                     toast.success('Placed Order Succesfully!')
+                }else{
+                    toast.error("Error :: Failed to place your Order!")
                 };
             });
     };
