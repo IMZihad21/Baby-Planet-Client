@@ -22,7 +22,7 @@ const TopProducts = () => {
                 {
                     products.map(product => <ProductDetails key={product._id} product={product} />)
                 }
-                <div className='bg-white shadow-xl rounded-lg p-3 h-80'>
+                <div className='bg-white shadow-xl rounded-lg p-3 h-96'>
                     <Link to='/products'>
                         <h1 className='text-2xl mt-36 text-pink-700'>All Products <i class="fas fa-arrow-right"></i></h1>
                     </Link>
