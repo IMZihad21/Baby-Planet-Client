@@ -6,7 +6,7 @@ const ProductDetails = ({ product }) => {
     return (
         <div className='bg-white shadow-xl rounded-lg p-3 md:h-96'>
             <div className='w-1/2 mx-auto'>
-                <img className='w-full h-full' src={productImage} alt={productName} />
+                <img className='w-full rounded-lg h-full' src={productImage} alt={productName} />
             </div>
             <h1 className='text-2xl font-bold mt-2 text-pink-700'>{productName}</h1>
             <p className='mt-2 font-semibold'>{productDescription.split(' ').slice(0, 10).toString().replace(/,/g, ' ') + '...'}</p>

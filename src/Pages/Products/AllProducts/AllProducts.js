@@ -40,6 +40,7 @@ const AllProducts = () => {
                             <th>Product</th>
                             <th>Description</th>
                             <th>Price</th>
+                            <th>Remove Product</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,8 +49,8 @@ const AllProducts = () => {
                                 <td className='h-20'><img className='h-full' src={product.productImage} alt={product.productName} /></td>
                                 <td>{product.productName}</td>
                                 <td>{product.productDescription.split(' ').slice(0, 10).toString().replace(/,/g, ' ') + '...'}</td>
-                                <td>{product.productPrice}</td>
-                                <td><button className='border-2 rounded-lg p-2 bg-pink-500 text-white' onClick={() => handleDeleteProduct(product._id)}>Delete this Product</button></td>
+                                <td>${product.productPrice}</td>
+                                <td><button className='border-2 rounded-lg py-2 px-5 bg-pink-500 text-white' onClick={() => handleDeleteProduct(product._id)}>Delete</button></td>
                             </tr>)
                         }
                     </tbody>
