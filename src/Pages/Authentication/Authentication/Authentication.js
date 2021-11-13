@@ -10,7 +10,7 @@ const Authentication = () => {
     const [ newUser, setNewUser ] = useState(false);
     const location = useLocation();
     const history = useHistory();
-    const redirectURI = location?.state?.from || '/home';
+    const redirectURI = location?.state?.from || '/dashboard';
     const redirect = { redirectURI, history }
 
     return (
