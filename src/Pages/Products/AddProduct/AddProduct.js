@@ -23,8 +23,8 @@ const AddProduct = () => {
             });
     };
     return (
-        <div className='m-10 flex'>
-            <div className='w-1/2 px-5'>
+        <div className='md:m-10 md:flex'>
+            <div className='md:w-1/2 px-5'>
                 <h1 className="text-lg font-bold text-pink-700 block mb-2">Add New Products</h1>
                 <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
                     <div className="text-left">
@@ -46,7 +46,7 @@ const AddProduct = () => {
                     <button type="submit" className="w-full mt-5 text-white bg-pink-700 hover:bg-pink-600 font-medium rounded-lg py-2.5">Add Product</button>
                 </form >
             </div>
-            <div className='w-1/2'>
+            <div className='md:w-1/2 hidden md:block'>
                 <img className='w-full h-full rounded-xl' src="https://i.ibb.co/WBYtkdH/reviewbanner.jpg" alt="" />
             </div>
         </div>
