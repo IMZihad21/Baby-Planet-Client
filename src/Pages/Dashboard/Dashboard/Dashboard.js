@@ -14,11 +14,11 @@ import Welcome from '../Welcome/Welcome';
 const Dashboard = () => {
     const { path } = useRouteMatch();
     return (
-        <div className='flex mx-10'>
-            <div className='w-1/6'>
+        <div className='md:flex mx-10'>
+            <div className='md:w-1/6 bg-pink-50'>
                 <Sidebar />
             </div>
-            <div className='w-5/6'>
+            <div className='md:w-5/6'>
                 <Switch>
                     <Route exact path={path}>
                         <Welcome />
