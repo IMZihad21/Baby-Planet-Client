@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
     getAuth,
+    getIdToken,
     signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
@@ -79,6 +80,10 @@ const useFirebase = () => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
+                getIdToken(user)
+                    .then(idToken => {
+                        setToken(idToken);
+                    })
             }
             else {
                 setUser({});
@@ -98,6 +103,7 @@ const useFirebase = () => {
 
     return {
         user,
+        token,
         isAdmin,
         loading,
         emailPassRegister,
