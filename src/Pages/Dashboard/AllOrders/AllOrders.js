@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import useProvider from '../../../Hooks/useProvider';
 
 const AllOrders = () => {
-    const { user, token } = useProvider();
+    const { token } = useProvider();
     const [ orders, setOrders ] = useState([]);
     useEffect(() => {
         axios.get('http://localhost:9000/allorders', { headers: { 'authorization': `Bearer ${token}` } })
@@ -12,7 +12,22 @@ const AllOrders = () => {
                 setOrders(result.data);
             }).catch((err) => {
             });
-    }, [ user.email ]);
+    }, [ token ]);
+
+    const handleOrderApproval = orderID => {
+        if (window.confirm("Do you want to approve this order?")) {
+            axios.put(`http://localhost:9000/orders/?orderID=${orderID}`)
+                .then((result) => {
+                    if (result.data.modifiedCount === 1) {
+                        const newOrders = orders.map(element => element._id === orderID ? { ...element, orderPending: false } : element);
+                        setOrders(newOrders);
+                        toast.success('Order Approved succesfully!')
+                    }
+                }).catch((err) => {
+                    toast.error('Could not approve the order!')
+                });
+        };
+    };
 
     const handleDeleteOrder = (orderID) => {
         if (window.confirm("Do you really want to remove this?")) {
@@ -53,7 +68,9 @@ const AllOrders = () => {
                                 <td>{order.productName}</td>
                                 <td>{order.productQuantity}</td>
                                 <td>{order.totalCost}</td>
-                                <td>{order.orderPending ? "Pending" : "Delivered"}</td>
+                                <td>{order.orderPending ?
+                                    <button className='border-2 rounded-lg p-2' onClick={() => handleOrderApproval(order._id)}>Approve Order</button> :
+                                    "Delivered"}</td>
                                 <td><button className='border-2 rounded-lg p-2' onClick={() => handleDeleteOrder(order._id)}>Delete this Order</button></td>
                             </tr>)
                         }

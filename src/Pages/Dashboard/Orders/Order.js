@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import useProvider from '../../../Hooks/useProvider';
 
 const Order = () => {
-    const { user, token } = useProvider();
+    const { token } = useProvider();
     const [ orders, setOrders ] = useState([]);
     useEffect(() => {
         axios.get('http://localhost:9000/orders', { headers: { 'authorization': `Bearer ${token}` } })
@@ -12,7 +12,7 @@ const Order = () => {
                 setOrders(result.data);
             }).catch((err) => {
             });
-    }, [ user.email ]);
+    }, [ token ]);
 
     const handleDeleteOrder = (orderID) => {
         if (window.confirm("Do you really want to remove this?")) {
