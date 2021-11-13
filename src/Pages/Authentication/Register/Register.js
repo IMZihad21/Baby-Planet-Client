@@ -12,6 +12,14 @@ const Register = ({ redirect }) => {
             toast.error("Error :: Fill all the fields before sign in");
             return;
         }
+        if (password !== rePassword) {
+            toast.error("Error :: Passwords do not match")
+            return;
+        }
+        if (password.length < 6) {
+            toast.error("Error :: Password is too short.")
+            return;
+        }
         emailPassRegister(displayName, email, password, redirect);
     }
     return (
