@@ -19,6 +19,8 @@ const MakeAdmin = () => {
                         toast.warning('This user is already Admin')
                     }
                     reset();
+                }else{
+                    toast.error('Error :: User not found with this email.')
                 }
             }).catch((err) => {
                 console.log(err);
@@ -29,8 +31,8 @@ const MakeAdmin = () => {
             <h1 className="text-lg font-bold text-pink-700 block mb-2">Add New Admin</h1>
             <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
                 <div className="text-left">
-                    <label htmlFor="email" className="font-medium text-pink-600 block mb-1">Product Name</label>
-                    <input {...register("email")} type="email" id="email" className="bg-pink-50 border border-pink-700 text-md rounded-lg w-full p-2.5 mb-2" required="" />
+                    <label htmlFor="email" className="font-medium text-pink-600 block mb-1">Enter email of new admin</label>
+                    <input {...register("email")} type="email" id="email" className="bg-pink-50 border border-pink-700 text-md rounded-lg w-full p-2.5 mb-2" required="" placeholder='someone@somewhere.com' />
                 </div>
                 <button type="submit" className="w-full mt-5 text-white bg-pink-700 hover:bg-pink-600 font-medium rounded-lg py-2.5">Make Admin</button>
             </form >
