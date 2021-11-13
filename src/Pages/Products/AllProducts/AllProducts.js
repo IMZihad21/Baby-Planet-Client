@@ -7,7 +7,7 @@ const AllProducts = () => {
     const { token } = useProvider();
     const [ products, setProducts ] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:9000/products', { headers: { 'authorization': `Bearer ${token}` } })
+        axios.get('https://baby-care-planet.herokuapp.com/products', { headers: { 'authorization': `Bearer ${token}` } })
             .then((result) => {
                 setProducts(result.data);
             }).catch((err) => {
@@ -16,7 +16,7 @@ const AllProducts = () => {
 
     const handleDeleteProduct = (productID) => {
         if (window.confirm("Do you really want to remove this?")) {
-            axios.delete(`http://localhost:9000/products/?productID=${productID}`)
+            axios.delete(`https://baby-care-planet.herokuapp.com/products/?productID=${productID}`)
                 .then((result) => {
                     if (result.data.deletedCount === 1) {
                         const newProducts = products.filter(element => element._id !== productID)

@@ -19,7 +19,7 @@ const Review = () => {
             return;
         }
         const reviewData = { reviewer, reviewContext, reviewRating }
-        axios.post('http://localhost:9000/reviews', reviewData)
+        axios.post('https://baby-care-planet.herokuapp.com/reviews', reviewData)
             .then((response) => {
                 if (response.data.acknowledged) {
                     toast.success('Submitted Review Succesfully!')

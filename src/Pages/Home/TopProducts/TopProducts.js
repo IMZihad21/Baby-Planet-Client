@@ -6,7 +6,7 @@ import ProductDetails from '../../Products/ProductDetails/ProductDetails';
 const TopProducts = () => {
     const [ products, setProducts ] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:9000/products')
+        axios.get('https://baby-care-planet.herokuapp.com/products')
             .then((response) => {
                 const data = response.data;
                 const slicedData = data.slice(0, 6);

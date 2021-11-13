@@ -10,7 +10,7 @@ const MakeAdmin = () => {
 
     const onSubmit = (formData) => {
         const { email } = formData;
-        axios.put('http://localhost:9000/users/admin', { email: email }, { headers: { 'authorization': `Bearer ${token}` } })
+        axios.put('https://baby-care-planet.herokuapp.com/users/admin', { email: email }, { headers: { 'authorization': `Bearer ${token}` } })
             .then((result) => {
                 if (result.data.matchedCount) {
                     if (result.data.modifiedCount === 1) {

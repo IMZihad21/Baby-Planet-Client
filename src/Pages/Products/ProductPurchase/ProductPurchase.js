@@ -29,7 +29,7 @@ const ProductPurchase = () => {
             orderPending: true,
             totalCost
         };
-        axios.post('http://localhost:9000/orders', orderDetails)
+        axios.post('https://baby-care-planet.herokuapp.com/orders', orderDetails)
             .then((response) => {
                 if (response.data.acknowledged) {
                     toast.success('Placed Order Succesfully!')
@@ -40,7 +40,7 @@ const ProductPurchase = () => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:9000/products/${productID}`)
+        axios.get(`https://baby-care-planet.herokuapp.com/products/${productID}`)
             .then((response) => {
                 setProduct(response.data);
             })

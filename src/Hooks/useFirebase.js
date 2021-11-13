@@ -71,7 +71,7 @@ const useFirebase = () => {
     // Save user to DB
     const saveUser = (displayName, email) => {
         const user = { displayName, email };
-        axios.put('http://localhost:9000/users', user)
+        axios.put('https://baby-care-planet.herokuapp.com/users', user)
             .then(() => { });
     };
 
@@ -94,7 +94,7 @@ const useFirebase = () => {
     }, [ auth ])
 
     useEffect(() => {
-        axios.get(`http://localhost:9000/users/${user.email}`)
+        axios.get(`https://baby-care-planet.herokuapp.com/users/${user.email}`)
             .then((response) => {
                 setIsAdmin(response.data.isAdmin);
             });

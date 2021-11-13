@@ -7,7 +7,7 @@ const AllOrders = () => {
     const { token } = useProvider();
     const [ orders, setOrders ] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:9000/allorders', { headers: { 'authorization': `Bearer ${token}` } })
+        axios.get('https://baby-care-planet.herokuapp.com/allorders', { headers: { 'authorization': `Bearer ${token}` } })
             .then((result) => {
                 setOrders(result.data);
             }).catch((err) => {
@@ -16,7 +16,7 @@ const AllOrders = () => {
 
     const handleOrderApproval = orderID => {
         if (window.confirm("Do you want to approve this order?")) {
-            axios.put(`http://localhost:9000/orders/?orderID=${orderID}`)
+            axios.put(`https://baby-care-planet.herokuapp.com/orders/?orderID=${orderID}`)
                 .then((result) => {
                     if (result.data.modifiedCount === 1) {
                         const newOrders = orders.map(element => element._id === orderID ? { ...element, orderPending: false } : element);
@@ -31,7 +31,7 @@ const AllOrders = () => {
 
     const handleDeleteOrder = (orderID) => {
         if (window.confirm("Do you really want to remove this?")) {
-            axios.delete(`http://localhost:9000/orders/?orderID=${orderID}`)
+            axios.delete(`https://baby-care-planet.herokuapp.com/orders/?orderID=${orderID}`)
                 .then((result) => {
                     if (result.data.deletedCount === 1) {
                         const newOrders = orders.filter(element => element._id !== orderID)

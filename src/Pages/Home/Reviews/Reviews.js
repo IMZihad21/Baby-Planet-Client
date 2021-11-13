@@ -5,7 +5,7 @@ import { RatingView } from 'react-simple-star-rating';
 const Reviews = () => {
     const [ reviews, setReviews ] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:9000/reviews')
+        axios.get('https://baby-care-planet.herokuapp.com/reviews')
             .then(response => {
                 const data = response.data;
                 const slicedData = data.slice(0, 6);

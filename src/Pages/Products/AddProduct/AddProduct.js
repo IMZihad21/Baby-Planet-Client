@@ -12,7 +12,7 @@ const AddProduct = () => {
             return;
         }
         const productsData = { productName, productDescription, productImage, productPrice }
-        axios.post('http://localhost:9000/products', productsData)
+        axios.post('https://baby-care-planet.herokuapp.com/products', productsData)
             .then((response) => {
                 if (response.data.acknowledged) {
                     toast.success('Product Added Succesfully!')
