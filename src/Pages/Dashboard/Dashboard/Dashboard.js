@@ -15,7 +15,7 @@ const Dashboard = () => {
     const { path } = useRouteMatch();
     return (
         <div className='md:flex mx-10'>
-            <div className='md:w-1/6 bg-pink-50'>
+            <div className='md:w-1/6 bg-pink-50 rounded-lg px-5 md:px-0'>
                 <Sidebar />
             </div>
             <div className='md:w-5/6'>

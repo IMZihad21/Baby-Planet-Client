@@ -6,10 +6,10 @@ const Sidebar = () => {
     const { isAdmin, logOut } = useProvider();
     const { url } = useRouteMatch();
     return (
-        <nav className="md:px-5 py-5 md:py-20 rounded-lg">
+        <nav className="md:px-5 py-5 md:py-20">
             {
                 isAdmin ?
-                    <div className="flex md:flex-col space-x-1 space-y-5">
+                    <div className="flex flex-col space-y-2 md:space-y-5">
                         <NavLink
                             activeClassName="border-b-4 border-yellow-400"
                             className="w-full py-3 text-white font-semibold border-b-4 bg-pink-700 hover:bg-pink-600 rounded-lg"
@@ -42,7 +42,7 @@ const Sidebar = () => {
                             <i class="fas fa-sign-out-alt"></i> Sign Out
                         </button>
                     </div> :
-                    <div className="flex flex-col space-y-5">
+                    <div className="flex flex-col space-y-2 md:space-y-5">
                         <NavLink
                             activeClassName="border-b-4 border-yellow-400"
                             className="w-full py-3 text-white font-semibold border-b-4 bg-pink-700 hover:bg-pink-600 rounded-lg"
