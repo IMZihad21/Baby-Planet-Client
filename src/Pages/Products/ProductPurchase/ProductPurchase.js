@@ -47,7 +47,7 @@ const ProductPurchase = () => {
     }, [ productID ])
 
     return (
-        <div className='mx-10'>
+        <div className='md:mx-10 '>
             {
                 !product ? <Loading /> :
                     <div className='flex space-x-5'>

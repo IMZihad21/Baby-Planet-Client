@@ -30,7 +30,7 @@ const Order = () => {
     };
 
     return (
-        <div className='mx-10'>
+        <div className='md:mx-10 '>
             <h1 className='text-3xl font-semibold my-10'>Manage Your Orders</h1>
             <div>
                 <table class="table-auto w-full">

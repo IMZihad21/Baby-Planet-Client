@@ -14,7 +14,7 @@ const Authentication = () => {
     const redirect = { redirectURI, history }
 
     return (
-        <div className='flex mx-10'>
+        <div className='md:flex mx-10'>
             <div className="md:w-1/2">
                 {
                     user.uid ?
@@ -30,7 +30,7 @@ const Authentication = () => {
                         </div>
                 }
             </div>
-            <div className='md:w-1/2'>
+            <div className='md:w-1/2 hidden md:block'>
                 <img src="https://i.ibb.co/SfLsQGZ/humphrey-muleba-lt5-EX1-CEHt-U-unsplash-removebg-preview.png" alt="dummy" />
             </div>
         </div>

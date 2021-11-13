@@ -6,7 +6,7 @@ import TopProducts from '../TopProducts/TopProducts';
 
 const Home = () => {
     return (
-        <div className='mx-10'>
+        <div className='md:mx-10 '>
             <Banner />
             <TopProducts />
             <Reviews />

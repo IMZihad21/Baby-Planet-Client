@@ -18,11 +18,11 @@ const TopProducts = () => {
             <div>
                 <h1 className='text-3xl font-semibold my-10'>Top <span className='text-pink-700 font-bold'>Sales</span></h1>
             </div>
-            <div className='mt-2 bg-pink-100 rounded-lg p-5 grid grid-cols-4 gap-3'>
+            <div className='mt-2 bg-pink-100 rounded-lg p-5 md:grid grid-cols-4 gap-3'>
                 {
                     products.map(product => <ProductDetails key={product._id} product={product} />)
                 }
-                <div className='bg-white shadow-xl rounded-lg p-3 h-96'>
+                <div className='bg-white mt-5 md:mt-0 shadow-xl rounded-lg p-3 h-96'>
                     <Link to='/products'>
                         <h1 className='text-2xl mt-36 text-pink-700'>All Products <i class="fas fa-arrow-right"></i></h1>
                     </Link>
