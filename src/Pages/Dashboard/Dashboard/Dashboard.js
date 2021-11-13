@@ -4,6 +4,7 @@ import AdminRoute from '../../../Utilities/AdminRoute/AdminRoute';
 import AllOrders from '../AllOrders/AllOrders';
 import Order from '../Orders/Order';
 import Payment from '../Payment/Payment';
+import Review from '../Review/Review';
 import Sidebar from '../Sidebar/Sidebar';
 import Welcome from '../Welcome/Welcome';
 
@@ -14,7 +15,7 @@ const Dashboard = () => {
             <div className='w-1/6'>
                 <Sidebar />
             </div>
-            <div className='flex-grow'>
+            <div className='w-5/6'>
                 <Switch>
                     <Route exact path={path}>
                         <Welcome />
@@ -25,8 +26,11 @@ const Dashboard = () => {
                     <Route path={`${path}/payment`}>
                         <Payment />
                     </Route>
+                    <Route path={`${path}/review`}>
+                        <Review />
+                    </Route>
                     <AdminRoute path={`${path}/allorders`}>
-                        <AllOrders/>
+                        <AllOrders />
                     </AdminRoute>
                 </Switch>
             </div>
