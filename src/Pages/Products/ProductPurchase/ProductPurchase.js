@@ -26,13 +26,14 @@ const ProductPurchase = () => {
             clientName: name,
             clientEmail: email,
             clientAddress: address,
+            orderPending: true,
             totalCost
         };
         axios.post('http://localhost:9000/orders', orderDetails)
             .then((response) => {
                 if (response.data.acknowledged) {
                     toast.success('Placed Order Succesfully!')
-                }else{
+                } else {
                     toast.error("Error :: Failed to place your Order!")
                 };
             });

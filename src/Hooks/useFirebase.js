@@ -97,7 +97,6 @@ const useFirebase = () => {
         axios.get(`http://localhost:9000/users/${user.email}`)
             .then((response) => {
                 setIsAdmin(response.data.isAdmin);
-                console.log(response.data.isAdmin);
             });
     }, [ user.email ])
 
