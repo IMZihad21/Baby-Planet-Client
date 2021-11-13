@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import useProvider from '../../../Hooks/useProvider';
 
-const Order = () => {
+const AllOrders = () => {
     const { user, token } = useProvider();
     const [ orders, setOrders ] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:9000/orders', { headers: { 'authorization': `Bearer ${token}` } })
+        axios.get('http://localhost:9000/allorders', { headers: { 'authorization': `Bearer ${token}` } })
             .then((result) => {
                 setOrders(result.data);
             }).catch((err) => {
@@ -76,4 +76,4 @@ const Order = () => {
     );
 };
 
-export default Order;
+export default AllOrders;
