@@ -50,8 +50,8 @@ const ProductPurchase = () => {
         <div className='md:mx-10 '>
             {
                 !product ? <Loading /> :
-                    <div className='flex space-x-5'>
-                        <div className='md:w-2/3 flex border-2 rounded-lg p-5 m-2'>
+                    <div className='md:flex space-x-5'>
+                        <div className='md:w-2/3 md:flex border-2 rounded-lg p-5 m-2'>
                             <div className='md:w-1/2 md:p-10'>
                                 <img className='w-full' src={product.productImage} alt="" />
                             </div>
