@@ -69,25 +69,13 @@ const AllOrders = () => {
                                 <td>{order.productQuantity}</td>
                                 <td>{order.totalCost}</td>
                                 <td>{order.orderPending ?
-                                    <button className='border-2 rounded-lg p-2' onClick={() => handleOrderApproval(order._id)}>Approve Order</button> :
-                                    "Delivered"}</td>
-                                <td><button className='border-2 rounded-lg p-2' onClick={() => handleDeleteOrder(order._id)}>Delete this Order</button></td>
+                                    <button className='border-2 rounded-lg p-2 bg-pink-500 text-white' onClick={() => handleOrderApproval(order._id)}>Approve Order</button> :
+                                    <span className='border-2 rounded-lg p-2 bg-green-100 px-5'> Delivered </span>}</td>
+                                <td><button className='border-2 rounded-lg p-2 bg-pink-500 text-white' onClick={() => handleDeleteOrder(order._id)}>Delete this Order</button></td>
                             </tr>)
                         }
                     </tbody>
                 </table>
-                {/* 
-                {
-                    orders.map(order => <div className='flex justify-between text-lg text-left font-semibold' key={order._id}>
-                        <h1 className='w-1/8'>{order.productName}</h1>
-                        <h1 className='w-1/8'>{order.clientName}</h1>
-                        <p className='w-1/8'>{order.clientAddress}</p>
-                        <p className='w-1/8'>{order.orderPending ? "Pending" : "Delivered"}</p>
-                        <p className='w-1/8'>{order.productQuantity}</p>
-                        <p className='w-1/8'>{order.totalCost}</p>
-                        <button className='w-1/8' onClick={() => handleDeleteOrder(order._id)}>Delete this Order</button>
-                    </div>)
-                } */}
             </div>
         </div>
     );

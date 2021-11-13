@@ -1,7 +1,10 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import AdminRoute from '../../../Utilities/AdminRoute/AdminRoute';
+import AddProduct from '../../Products/AddProduct/AddProduct';
+import AllProducts from '../../Products/AllProducts/AllProducts';
 import AllOrders from '../AllOrders/AllOrders';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import Order from '../Orders/Order';
 import Payment from '../Payment/Payment';
 import Review from '../Review/Review';
@@ -31,6 +34,15 @@ const Dashboard = () => {
                     </Route>
                     <AdminRoute path={`${path}/allorders`}>
                         <AllOrders />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/allproducts`}>
+                        <AllProducts />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addproducts`}>
+                        <AddProduct />
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeadmin`}>
+                        <MakeAdmin />
                     </AdminRoute>
                 </Switch>
             </div>
