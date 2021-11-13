@@ -1,3 +1,4 @@
+import axios from "axios";
 import {
     getAuth,
     signInWithPopup,
@@ -16,7 +17,9 @@ initFirebase();
 
 const useFirebase = () => {
     const [ user, setUser ] = useState({});
-    const [ loading, setLoading ] = useState(true)
+    const [ loading, setLoading ] = useState(true);
+    const [ isAdmin, setIsAdmin ] = useState(false);
+    const [ token, setToken ] = useState('');
     const auth = getAuth();
 
     // Register with email pass
@@ -24,6 +27,7 @@ const useFirebase = () => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
+                saveUser(displayName, email);
                 updateProfile(auth.currentUser, { displayName });
                 history.replace(redirectURI);
             })
@@ -44,7 +48,11 @@ const useFirebase = () => {
     const googleProvider = new GoogleAuthProvider();
     const googleLogin = ({ redirectURI, history }) => {
         signInWithPopup(auth, googleProvider)
-            .then(() => history.replace(redirectURI))
+            .then((result) => {
+                const user = result.user;
+                saveUser(user.displayName, user.email);
+                history.replace(redirectURI)
+            })
             .catch(err => toast.error(err.message))
             .finally(() => setLoading(false));
     }
@@ -58,6 +66,13 @@ const useFirebase = () => {
             })
             .finally(() => setLoading(false))
     }
+
+    // Save user to DB
+    const saveUser = (displayName, email) => {
+        const user = { displayName, email };
+        axios.put('http://localhost:9000/users', user)
+            .then(() => { });
+    };
 
     // Still unclear about this so just copied it 
     useEffect(() => {
@@ -73,8 +88,17 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [ auth ])
 
+    useEffect(() => {
+        axios.get(`http://localhost:9000/users/${user.email}`)
+            .then((response) => {
+                setIsAdmin(response.data.isAdmin);
+                console.log(response.data.isAdmin);
+            });
+    }, [ user.email ])
+
     return {
         user,
+        isAdmin,
         loading,
         emailPassRegister,
         emailPassLogin,
