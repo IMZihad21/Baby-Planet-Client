@@ -18,7 +18,7 @@ import PrivateRoute from './Utilities/PrivateRoute/PrivateRoute';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/babyPlanet">
         <Header />
         <Switch>
           <Route exact path="/">
