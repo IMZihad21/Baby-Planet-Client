@@ -6,6 +6,7 @@ on:
 
 env:
   TZ: Asia/Dhaka
+  REACT_APP_FIREBASE_CONFIG: ${{ secrets.FIREBASE }}
 
 jobs:
   BuildandPush:
