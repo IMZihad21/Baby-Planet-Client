@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Baby-Planet-Client/static/css/main.9a34eb6b.chunk.css",
+    "main.js": "/Baby-Planet-Client/static/js/main.1f689ca6.chunk.js",
+    "main.js.map": "/Baby-Planet-Client/static/js/main.1f689ca6.chunk.js.map",
+    "runtime-main.js": "/Baby-Planet-Client/static/js/runtime-main.45e7b534.js",
+    "runtime-main.js.map": "/Baby-Planet-Client/static/js/runtime-main.45e7b534.js.map",
+    "static/css/2.23871051.chunk.css": "/Baby-Planet-Client/static/css/2.23871051.chunk.css",
+    "static/js/2.9f9d2e0e.chunk.js": "/Baby-Planet-Client/static/js/2.9f9d2e0e.chunk.js",
+    "static/js/2.9f9d2e0e.chunk.js.map": "/Baby-Planet-Client/static/js/2.9f9d2e0e.chunk.js.map",
+    "static/js/3.8eb6d491.chunk.js": "/Baby-Planet-Client/static/js/3.8eb6d491.chunk.js",
+    "static/js/3.8eb6d491.chunk.js.map": "/Baby-Planet-Client/static/js/3.8eb6d491.chunk.js.map",
+    "index.html": "/Baby-Planet-Client/index.html",
+    "static/css/2.23871051.chunk.css.map": "/Baby-Planet-Client/static/css/2.23871051.chunk.css.map",
+    "static/css/main.9a34eb6b.chunk.css.map": "/Baby-Planet-Client/static/css/main.9a34eb6b.chunk.css.map",
+    "static/js/2.9f9d2e0e.chunk.js.LICENSE.txt": "/Baby-Planet-Client/static/js/2.9f9d2e0e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.45e7b534.js",
+    "static/css/2.23871051.chunk.css",
+    "static/js/2.9f9d2e0e.chunk.js",
+    "static/css/main.9a34eb6b.chunk.css",
+    "static/js/main.1f689ca6.chunk.js"
+  ]
+}
