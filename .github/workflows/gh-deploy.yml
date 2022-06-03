@@ -21,7 +21,7 @@ jobs:
 
       - name: Adapt for GitHub Pages
         run: |
-          git config --global user.name 'IMZihad21' 
+          git config --global user.name 'ZèD' 
           git config --global user.email 'imzihad@gmail.com' 
           git fetch
           ghPagesChanges=$(git log origin/gh-sources -n 1 --pretty=format:"%H")
@@ -40,7 +40,7 @@ jobs:
         with:
           branch: gh-pages
           folder: build
-          git-config-name: IMZihad21
+          git-config-name: ZèD
           git-config-email: imzihad@gmail.com
           commit-message: "Deployed production build 🚀"
           single-commit: true
